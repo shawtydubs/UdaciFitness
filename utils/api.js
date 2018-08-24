@@ -16,3 +16,8 @@ export const removeEntry = (key) => {
             AsyncStorage.setItem(CALENDAR_STORAGE_KEY, JSON.stringify(data));
         });
 };
+
+export function fetchCalendarResults () {
+    return AsyncStorage.getItem(CALENDAR_STORAGE_KEY)
+        .then(formatCalendarResults)
+}
