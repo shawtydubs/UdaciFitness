@@ -5,6 +5,7 @@ import AddEntry from './AddEntry'
 import History from './History'
 import { purple, white } from '../utils/colors'
 import { FontAwesome, Ionicons } from '@expo/vector-icons'
+import Live from './Live'
 
 const RouteConfigs = {
     History: {
@@ -21,6 +22,13 @@ const RouteConfigs = {
             tabBarIcon: ({ tintColor }) => <FontAwesome name='plus-square' size={30} color={tintColor} />
         },
     },
+    Live: {
+        screen: Live,
+        navigationOptions: {
+            tabBarLabel: 'Live',
+            tabBarIcon: ({ tintColor }) => <Ionicons name='ios-speedometer' size={30} color={tintColor} />
+        }
+    }
 }
 
 const TabNavigatorConfig = {
