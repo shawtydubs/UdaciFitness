@@ -7,8 +7,7 @@ import { createStackNavigator } from 'react-navigation'
 import { purple, white } from './utils/colors'
 import { Constants } from 'expo'
 import EntryDetail from './components/EntryDetail'
-import TabsIos from './components/TabsIos'
-import TabsAndroid from './components/TabsAndroid'
+import {iosTabs, androidTabs} from './components/Tabs'
 
 function UdaciStatusBar ({backgroundColor, ...props}) {
     return (
@@ -18,9 +17,7 @@ function UdaciStatusBar ({backgroundColor, ...props}) {
     )
 }
 
-const nav = Platform.OS === 'ios'
-    ? TabsIos
-    : TabsAndroid
+const nav = Platform.OS === 'ios' ? iosTabs : androidTabs
 
 const MainNavigator = createStackNavigator({
     Home: {

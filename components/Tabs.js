@@ -1,5 +1,5 @@
 import React from 'react'
-import {createMaterialTopTabNavigator} from 'react-navigation'
+import {createMaterialTopTabNavigator, createBottomTabNavigator} from 'react-navigation'
 import {Platform} from 'react-native'
 import AddEntry from './AddEntry'
 import History from './History'
@@ -43,4 +43,6 @@ const TabNavigatorConfig = {
     }
 };
 
-export default createMaterialTopTabNavigator(RouteConfigs, TabNavigatorConfig);
+export const androidTabs = createMaterialTopTabNavigator(RouteConfigs, TabNavigatorConfig);
+
+export const iosTabs = createBottomTabNavigator(RouteConfigs, TabNavigatorConfig);
